@@ -58,6 +58,16 @@ app.get('/video/:id', async (req, res) => {
   }
 });
 
+
+app.get('/', async (req, res) => {
+  try {
+    res.json({ message: 'ok', videoId: ''  });
+  } catch (error) {
+    res.status(500).json({ error: 'Error obteniendo el video' });
+  }
+});
+
+
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
